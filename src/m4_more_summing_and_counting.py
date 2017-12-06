@@ -90,7 +90,7 @@ def run_test_sum_from():
     print('       actual (from my code):  ', answer_from_my_code)
 
 # ----------------------------------------------------------------------
-# TODO: 2.
+# TDONE: 2.
 #   When you have READ the above  run_test_sum_from  function,
 #   asking questions as needed, and you feel that you (mostly, at least)
 #   understand it, and you feel that you understand from the example:
@@ -114,7 +114,7 @@ def sum_from(m, n):
         sum_from(6, 9) returns 6 + 7 + 8 + 9, that is, 30.
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #          Tests have been written for you (above).
     #
     # IMPORTANT:  Your solution MUST
@@ -124,7 +124,11 @@ def sum_from(m, n):
     #   you must NOT use the 2 or 3-parameter versions
     #   of the RANGE expression, if you happen to know them.
     # ------------------------------------------------------------------
+    answer_from_my_code = 0
+    for k in range((n-m) + 1):
+        answer_from_my_code = answer_from_my_code + (n-k)
 
+    return answer_from_my_code
 
 def run_test_factorial():
     """ Tests the   factorial   function. """
@@ -162,6 +166,24 @@ def run_test_factorial():
     #   ** uses  math.factorial  as an ORACLE for testing. **
     # ------------------------------------------------------------------
 
+    # Test 3:
+    answer_from_oracle = math.factorial(0)
+    answer_from_my_code = factorial(0)
+    print('Test 1 expected (from oracle):', answer_from_oracle)
+    print('       actual (from my code): ', answer_from_my_code)
+
+    # Test 4:
+    answer_from_oracle = math.factorial(21)
+    answer_from_my_code = factorial(21)
+    print('Test 2 expected (from oracle):', answer_from_oracle)
+    print('       actual (from my code): ', answer_from_my_code)
+
+    # Test 5:
+    answer_from_oracle = math.factorial(0)
+    answer_from_my_code = factorial(0)
+    print('Test 1 expected (from oracle):', answer_from_oracle)
+    print('       actual (from my code): ', answer_from_my_code)
+
 
 def factorial(n):
     """
@@ -173,12 +195,17 @@ def factorial(n):
         factorial(0) returns 1 (by definition).
     """
     # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #
     # IMPORTANT:  Your solution MUST
     #   use an explicit    for ... in range(...):     statement.
     # ------------------------------------------------------------------
+    answer_from_my_code = 1
+    for k in range(n):
+        answer_from_my_code = answer_from_my_code * (n - k)
+
+    return answer_from_my_code
 
 
 def run_test_count_cosines_from():
@@ -251,6 +278,14 @@ def count_cosines_from(m, n, x):
     #   you must NOT use the 2 or 3-parameter versions
     #   of the RANGE expression, if you happen to know them.
     # ------------------------------------------------------------------
+    x = x
+    count = 0
+    for k in range((n-m) + 1):
+        if math.cos(n-k) > x:
+            count = count + 1
+    return count
+
+
 
 
 def run_test_sum_unit_fractions_from():
@@ -298,6 +333,11 @@ def sum_unit_fractions_from(m, n):
     #   you must NOT use the 2 or 3-parameter versions
     #   of the RANGE expression, if you happen to know them.
     # ------------------------------------------------------------------
+    total = 0
+    for k in range((n-m) + 1):
+        total = total + (1/(n-k))
+
+    return total
 
 
 # ----------------------------------------------------------------------
