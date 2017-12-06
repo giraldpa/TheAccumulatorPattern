@@ -269,7 +269,7 @@ def draw_circles_from_rectangle(m, n, rectangle, window):
 
     rectangle.attach_to(window)
 
-    window.render(0.1)
+    window.render()
 
 
 
